@@ -6,16 +6,16 @@ export async function render(el) {
     <section class="auth-card">
       <img src="images/logo.svg" alt="" width="56" height="56" class="auth-logo">
       <h1>আসসালামু আলাইকুম</h1>
-      <p class="muted">ইমেইল দিয়ে লগইন বা নতুন অ্যাকাউন্ট খুলুন। পাসওয়ার্ড লাগবে না, ইমেইলে একটি কোড যাবে।</p>
+      <p class="muted">ইমেইল দিয়ে লগইন বা নতুন অ্যাকাউন্ট খুলুন। পাসওয়ার্ড লাগবে না, ইমেইলে একটি লগইন লিংক যাবে।</p>
       <form id="f-email" class="stack" novalidate>
         <label class="field"><span>ইমেইল</span>
           <input type="email" name="email" required autocomplete="email" inputmode="email" placeholder="example@gmail.com">
         </label>
-        <button class="btn" type="submit">কোড পাঠান</button>
+        <button class="btn" type="submit">লগইন লিংক পাঠান</button>
       </form>
       <form id="f-code" class="stack" hidden novalidate>
         <p class="note-sm" id="sent-to"></p>
-        <label class="field"><span>৬ সংখ্যার কোড</span>
+        <label class="field"><span>ইমেইলে কোড থাকলে এখানে দিন</span>
           <input name="code" required inputmode="numeric" autocomplete="one-time-code" pattern="[0-9]{6}" maxlength="6" class="otp" placeholder="••••••">
         </label>
         <button class="btn" type="submit">লগইন করুন</button>
@@ -35,7 +35,7 @@ export async function render(el) {
     const done = await act(fEmail.querySelector("[type=submit]"), () => api.sendCode(email).then(() => true));
     if (!done) return;
     fEmail.hidden = true; fCode.hidden = false;
-    el.querySelector('#sent-to').textContent = `${email} — এ কোড পাঠানো হয়েছে। ইনবক্স বা স্প্যাম ফোল্ডার দেখুন।`;
+    el.querySelector('#sent-to').textContent = `${email} — এ একটি ইমেইল পাঠানো হয়েছে। ইমেইলের লিংকে ক্লিক করলেই লগইন হয়ে যাবে। ইনবক্সে না পেলে স্প্যাম ফোল্ডার দেখুন।`;
     fCode.code.focus();
   });
 

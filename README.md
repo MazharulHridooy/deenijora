@@ -28,7 +28,7 @@ Plain HTML/CSS/JS (no build step) + Supabase (auth + Postgres with RLS). Hosts f
 
 1. **Supabase project**: create a free project at supabase.com (region: Singapore is closest to Bangladesh).
 2. **Database**: Dashboard → SQL Editor → paste all of `supabase/schema.sql` → Run.
-3. **Email login code**: Authentication → Email Templates → "Magic Link" → make sure the body contains `{{ .Token }}` (the 6-digit code), e.g. `আপনার Deenijora লগইন কোড: {{ .Token }}`.
+3. **Email login**: with Supabase's default email the user gets a login **link** (works as-is). To send a 6-digit code instead, first set up custom SMTP (step 5), then put `{{ .Token }}` in both the "Confirm signup" and "Magic link or OTP" templates.
 4. **URLs**: Authentication → URL Configuration → Site URL `https://deenijora.com`, add `https://deenijora.com/app.html` to Redirect URLs.
 5. **SMTP** (important): Supabase's built-in email is rate-limited to a few emails/hour. Authentication → SMTP Settings → add a provider (Resend, Brevo, Amazon SES).
 6. **Config**: Project Settings → API → copy *Project URL* and *anon public* key into `js/config.js`, and set your WhatsApp number (`8801XXXXXXXXX`). Then run `sh build-pages.sh` so the info pages pick up the number, and replace `8801XXXXXXXXX` in `index.html`.

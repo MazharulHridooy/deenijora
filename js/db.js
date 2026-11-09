@@ -18,7 +18,7 @@ async function realApi() {
     async session() { return (await sb.auth.getSession()).data.session; },
     onAuth(cb) { sb.auth.onAuthStateChange((_e, s) => cb(s)); },
     async sendCode(email) {
-      ok(await sb.auth.signInWithOtp({ email, options: { emailRedirectTo: `${location.origin}${location.pathname}#/dashboard` } }));
+      ok(await sb.auth.signInWithOtp({ email, options: { emailRedirectTo: `${location.origin}${location.pathname}` } }));
     },
     async verifyCode(email, token) { ok(await sb.auth.verifyOtp({ email, token, type: 'email' })); },
     async signOut() { await sb.auth.signOut(); },
