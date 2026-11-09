@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Deenijora">
+  <rect width="64" height="64" rx="16" fill="#0f3d2e"/>
+  <path d="M14 48V30a10 10 0 0 1 20 0v18" fill="none" stroke="#e9c77b" stroke-width="4" stroke-linecap="round"/>
+  <path d="M30 48V30a10 10 0 0 1 20 0v18" fill="none" stroke="#f6efe1" stroke-width="4" stroke-linecap="round"/>
+  <path d="M10 48h44" stroke="#e9c77b" stroke-width="4" stroke-linecap="round"/>
+  <circle cx="32" cy="13" r="3" fill="#e9c77b"/>
+</svg>

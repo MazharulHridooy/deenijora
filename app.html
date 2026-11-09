@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="bn">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>আমার অ্যাকাউন্ট — Deenijora</title>
+  <meta name="robots" content="noindex">
+  <meta name="theme-color" content="#0f3d2e">
+  <meta name="color-scheme" content="light dark">
+  <link rel="icon" href="images/logo.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600&family=Tiro+Bangla&display=swap">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/app.css">
+  <link rel="modulepreload" href="js/app.js">
+</head>
+<body class="app-body">
+  <a class="skip" href="#view">মূল অংশে যান</a>
+  <header class="site-header">
+    <div class="wrap header-row">
+      <a class="brand" href="index.html" aria-label="Deenijora হোম">
+        <img src="images/logo.svg" alt="" width="34" height="34"><span>Deenijora</span>
+      </a>
+      <div id="header-actions" class="header-actions"></div>
+    </div>
+  </header>
+  <div id="demo-banner" hidden class="demo-banner">ডেমো মোড — নমুনা তথ্য দেখানো হচ্ছে। লগইন কোড: ১২৩৪৫৬ (অ্যাডমিন দেখতে ইমেইল admin দিয়ে শুরু করুন)</div>
+  <div class="wrap app-grid">
+    <nav id="sidenav" class="sidenav" aria-label="অ্যাকাউন্ট মেনু" hidden></nav>
+    <main id="view" class="view" tabindex="-1" aria-live="polite">
+      <div class="loading" aria-label="লোড হচ্ছে"><span></span><span></span><span></span></div>
+    </main>
+  </div>
+  <nav id="tabbar" class="tabbar" aria-label="প্রধান মেনু" hidden></nav>
+  <noscript><p class="wrap">এই পেজ ব্যবহার করতে JavaScript চালু করুন।</p></noscript>
+  <script type="module" src="js/app.js"></script>
+</body>
+</html>
